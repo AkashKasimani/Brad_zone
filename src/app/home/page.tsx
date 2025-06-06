@@ -4,6 +4,7 @@
 'use client'
 import React, { useState, useEffect}  from 'react'
 import { Star } from 'lucide-react';
+
 import 'boxicons/css/boxicons.min.css';
 import { services } from './service'
 export default function HomePage(){
@@ -22,7 +23,7 @@ export default function HomePage(){
         <nav>
           <ul className="nav-links flex space-x-4">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="/service">Services</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
