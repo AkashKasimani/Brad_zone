@@ -49,7 +49,7 @@ export default function HomePage(){
 
 
 <section className="services-full p-8 bg-gray-50">
-  <h2 className="text-5xl font-extrabold text-center mb-8">Our Services</h2>
+  <h2 className="text-5xl font-extrabold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Our Services</h2>
 
   <div className="flex flex-wrap justify-center gap-6">
     {services.map((service, index) => (
@@ -64,7 +64,7 @@ export default function HomePage(){
           alt={service.alt}
           className="mb-4 h-16 w-16 mx-auto"
         />
-        <h3 className="text-xl font-semibold text-center mb-2">
+        <h3 className="text-xl font-semibold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
           {service.title}
         </h3>
         <p className="text-center text-gray-600">
