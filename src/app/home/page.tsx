@@ -20,7 +20,7 @@ export default function HomePage(){
   return (
     <div className="min-h-screen bg-white text-black">
       <header className="navbar flex justify-between items-center p-4 shadow">
-        <div className="logo text-xl font-bold">BrandZone</div>
+        <div className="logo text-3xl font-bold">BrandZone</div>
         <nav className="hidden md:block">
           <ul className="nav-links flex space-x-4">
             <li><a href="/home">Home</a></li>
