@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserCheck, Lightbulb, Award, Shield, Code, Users, Zap, Lock } from 'lucide-react';
+import { UserCheck, Lightbulb, Award, Shield, Code, Users, Zap, Lock,  } from 'lucide-react';
 
 const ServicesPage: React.FC = () => {
   const services = [
@@ -46,10 +46,32 @@ const ServicesPage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gray-50 text-gray-800 p-8 min-h-screen">
-      <div className="container mx-auto">
-      
-    
+    <div className="bg-gray-50 text-gray-800 min-h-screen">
+      {/* Navbar */}
+      <header className="bg-white shadow-sm border-b border-gray-200">
+        <div className="container mx-auto px-8 py-4">
+          <div className="flex justify-between items-center">
+            <div className="logo text-2xl font-bold text-gray-900">BrandZone</div>
+            <nav>
+              <ul className="flex space-x-8">
+                <li><a href="/home" className="text-gray-600 hover:text-gray-900 transition-colors">Home</a></li>
+                <li><a href="/services" className="text-blue-600 font-medium">Services</a></li>
+                <li><a href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">About</a></li>
+                <li><a href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">Contact</a></li>
+              </ul>
+            </nav>
+            
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-8 py-12">
+        
+        {/* Back Button */}
+       
+        
+        {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 text-gray-900">Our Design and Development Approach</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -57,6 +79,7 @@ const ServicesPage: React.FC = () => {
           </p>
         </div>
         
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <div 
@@ -74,11 +97,13 @@ const ServicesPage: React.FC = () => {
           ))}
         </div>
         
+        {/* Call to Action */}
         <div className="text-center mt-12">
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300">
             Get Started Today
           </button>
         </div>
+        
       </div>
     </div>
   );
