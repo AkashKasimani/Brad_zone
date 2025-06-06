@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import React, { useState, useEffect}  from 'react'
+import { Star } from 'lucide-react';
 import 'boxicons/css/boxicons.min.css';
 import { services } from './service'
 export default function HomePage(){
@@ -119,40 +120,71 @@ export default function HomePage(){
   </div>
 </section>
            {/* Footer */}
-<footer className="bg-white text-gray-800 p-8 border-t">
-  <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-    <div className="text">
-      <p className="mb-4">We'd love to hear about your experience with our services. Please take a moment to leave us a review..</p>
-      <div className="rating">
-        <a className="social-icons bx bxl-google bx-md"/>
-        <span className="inline-block ml-2"></span>
+ <footer className="bg-gray-50 text-gray-800 p-8 border-t border-gray-200">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+        
+        {/* Reviews Section */}
+        <div className="flex-1">
+          <p className="mb-4 text-gray-700">
+            We'd love to hear about your experience with our services. Please take a moment to leave us a review.
+          </p>
+          <div className="flex items-center">
+            <div className="flex text-yellow-500 mr-2">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-current" />
+              ))}
+            </div>
+            <a href="#" className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
+              Google Reviews
+            </a>
+          </div>
+        </div>
+        
+        {/* Links Section */}
+        <div className="flex-1">
+          <h4 className="mb-4 font-semibold text-gray-900">Links</h4>
+          <ul className="space-y-2">
+            <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:underline transition-colors">About Us</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:underline transition-colors">Services</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:underline transition-colors">Case Studies</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:underline transition-colors">How it works</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:underline transition-colors">Blog</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:underline transition-colors">Careers</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:underline transition-colors">Areas We Serve</a></li>
+          </ul>
+        </div>
+        
+        {/* Contact Section */}
+        <div className="flex-1">
+          <h4 className="mb-4 font-semibold text-gray-900">Contact us</h4>
+          <p className="text-gray-700 mb-3">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+          <a href="tel:+923183561921" className="font-semibold text-blue-600 hover:text-blue-800 transition-colors">
+            +923183561921
+          </a>
+        </div>
+        
+        {/* Social Icons */}
+        <div className="flex space-x-3">
+          <a href="#" className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white transition-colors">
+            <span className="bx bxl-twitter"></span>
+          </a>
+          <a href="#" className="w-10 h-10 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center text-white transition-colors">
+            <span className="bx bxl-facebook"></span>
+          </a>
+          <a href="#" className="w-10 h-10 bg-pink-600 hover:bg-pink-700 rounded-full flex items-center justify-center text-white transition-colors">
+            <span className="bx bxl-instagram"></span>
+          </a>
+        </div>
       </div>
-    </div>
-    <div className="links">
-      <h4 className="mb-4">Links</h4>
-      <ul>
-        <li><a href="#" className="hover:underline">About Us</a></li>
-        <li><a href="#" className="hover:underline">Services</a></li>
-        <li><a href="#" className="hover:underline">Case Studies</a></li>
-        <li><a href="#" className="hover:underline">How it works</a></li>
-        <li><a href="#" className="hover:underline">Blog</a></li>
-        <li><a href="#" className="hover:underline">Careers</a></li>
-        <li><a href="#" className="hover:underline">Areas We Serve</a></li>
-      </ul>
-    </div>
-    <div className="contact">
-      <h4 className="mb-4">Contact us</h4>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      <a href="tel:+923183561921" className="font-semibold">+923183561921</a>
-    </div>
-    <div className="social-icons flex">
-      <a href="#" className="bx bxl-facebook bx-md mr-2"></a>
-      <a href="#" className="bx bxl-twitter bx-md mr-2"></a>
-      <a href="#" className="bx bxl-instagram bx-md"></a>
-    </div>
-  </div>
-  <p className="mt-4 text-sm text-center md:text-right">© 2023 Copyright by IK Developers. All rights reserved.</p>
-</footer>
+      
+      <div className="border-t border-gray-200 mt-8 pt-4">
+        <p className="text-sm text-center md:text-right text-gray-600">
+          © 2023 Copyright by IK Developers. All rights reserved.
+        </p>
+      </div>
+    </footer>
 
     </div>
   )
