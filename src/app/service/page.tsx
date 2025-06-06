@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserCheck, Lightbulb, Award, Shield, Code, Users, Zap, Lock,  } from 'lucide-react';
+import { UserCheck, Lightbulb, Award, Shield, Code, Users, Zap, Lock } from 'lucide-react';
 
 const ServicesPage: React.FC = () => {
   const services = [

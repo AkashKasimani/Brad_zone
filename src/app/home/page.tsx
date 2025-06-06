@@ -9,6 +9,7 @@ import 'boxicons/css/boxicons.min.css';
 import { services } from './service'
 export default function HomePage(){
   const [current, setCurrent] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const cardsCount = 5
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,16 +21,40 @@ export default function HomePage(){
     <div className="min-h-screen bg-white text-black">
       <header className="navbar flex justify-between items-center p-4 shadow">
         <div className="logo text-xl font-bold">BrandZone</div>
-        <nav>
+        <nav className="hidden md:block">
           <ul className="nav-links flex space-x-4">
-            <li><a href="#">Home</a></li>
+            <li><a href="/home">Home</a></li>
             <li><a href="/service">Services</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
-        <button className="cta-button bg-blue-500 text-white px-4 py-2 rounded">Get Started</button>
+        
+        {/* Mobile menu button */}
+        <button 
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span className={`bg-black block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+          <span className={`bg-black block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+          <span className={`bg-black block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+        </button>
       </header>
+
+      {/* Mobile menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white shadow-lg border-t">
+          <nav className="p-4">
+            <ul className="nav-links flex flex-col space-y-4">
+              <li><a href="/home" className="block py-2">Home</a></li>
+              <li><a href="/service" className="block py-2">Services</a></li>
+              <li><a href="#" className="block py-2">About</a></li>
+              <li><a href="#" className="block py-2">Contact</a></li>
+            </ul>
+            <button className="cta-button bg-blue-500 text-white px-4 py-2 rounded mt-4 w-full">Get Started</button>
+          </nav>
+        </div>
+      )}
 
     <section className="w-full hero-full flex flex-col md:flex-row items-center justify-center p-8 gap-8 bg-white">
   <div className="md:w-1/2 space-y-6 text-center md:text-left">
@@ -44,7 +69,7 @@ export default function HomePage(){
     </button>
   </div>
   <div className="md:w-1/2 flex justify-center">
-    <img className="h-[500px] w-full max-w-[600px] object-cover rounded-xl" src="https://thumbs.dreamstime.com/b/office-workers-sitting-round-table-discussing-ideas-exchanging-information-work-meeting-business-negotiation-office-workers-141738285.jpg" alt="Hero"/>
+    <img className="h-[300px] md:h-[500px] w-full max-w-[600px] object-cover rounded-xl" src="https://thumbs.dreamstime.com/b/office-workers-sitting-round-table-discussing-ideas-exchanging-information-work-meeting-business-negotiation-office-workers-141738285.jpg" alt="Hero"/>
   </div>
 </section>
 
@@ -102,7 +127,7 @@ export default function HomePage(){
       </h2>
       <p className="mb-4 text-gray-600">
         We <span className="font-semibold ">add development capacity</span> to tech
-        teams. Our value isn’t limited to building teams but is equally
+        teams. Our value isn't limited to building teams but is equally
         distributed across the project lifecycle. We are a custom software
         development company that guarantees the successful delivery of your
         project.
@@ -113,7 +138,7 @@ export default function HomePage(){
     </div>
     <div className="video-wrapper md:w-1/2">
       <img
-        className="h-[400px] w-full object-cover rounded-lg shadow-lg"
+        className="h-[250px] md:h-[400px] w-full object-cover rounded-lg shadow-lg"
         src="https://as2.ftcdn.net/v2/jpg/07/07/32/59/1000_F_707325903_4zz7qwPcx8tkhmxJBaxCAWY60cjxikD5.jpg"
         alt="Video thumbnail"
       />
